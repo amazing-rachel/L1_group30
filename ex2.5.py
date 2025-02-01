@@ -38,12 +38,10 @@ def change_content(data):
 
     return data
               
-start = timeit.default_timer()
-for i in range(10):
-    changed_content = change_content(content)
-end = timeit.default_timer()
-print('The everage time across the ten repetitions is:', (end-start)/10, 'seconds.')
+elapsed_time = timeit.timeit(lambda: change_content(content), number=10)
+print('The everage time across the ten repetitions is:', elapsed_time/10, 'seconds.')
 
+changed_content = change_content(content)
 changed_content = changed_content[::1]
 with open("output.2.3.json", "w") as file:
     json.dump(changed_content, file, indent=4, separators=(',', ':'))
