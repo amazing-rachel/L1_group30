@@ -42,7 +42,7 @@ elapsed_time = timeit.timeit(lambda: change_content(content), number=10)
 print('The everage time across the ten repetitions is:', elapsed_time/10, 'seconds.')
 
 changed_content = change_content(content)
-changed_content = changed_content[::1]
+changed_content = changed_content[::-1]
 with open("output.2.3.json", "w") as file:
     json.dump(changed_content, file, indent=4, separators=(',', ':'))
 
