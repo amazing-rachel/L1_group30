@@ -28,11 +28,7 @@ def change_content(data):
                         if 'repo' in i['payload']['pull_request']['base']:
                             i['payload']['pull_request']['base']['repo']['size'] = 42
                 elif 'forkee' in i['payload']:
-                    i['payload']['forkee']['size'] = 42
-                            
-                    
-                                    
-
+                    i['payload']['forkee']['size'] = 42                
     return data
               
 
